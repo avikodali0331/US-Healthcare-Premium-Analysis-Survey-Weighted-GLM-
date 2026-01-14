@@ -4,20 +4,16 @@ This project analyzes data from the 2024 National Health Interview Survey (NHIS)
 Using R, we performed a complete statistical analysis pipeline—from data cleaning and complex survey design implementation to generalized linear modeling (GLM) and variable selection. The final model quantifies how factors like anxiety, sexual orientation, and lifestyle choices impact insurance costs.
 Based on the comprehensive report and R code you provided, here is a structured draft for your GitHub README. This is designed to highlight the technical rigor of the project (specifically the survey-weighted analysis and custom feature selection) to appeal to data science recruiters.
 
-* 
-**Sexual Orientation:** Surprisingly, gay/lesbian individuals face significantly higher premiums compared to straight individuals.
+* **Sexual Orientation:** Surprisingly, gay/lesbian individuals face significantly higher premiums compared to straight individuals.
 
 
-* 
-**Mental Health:** Daily anxiety was found to be a statistically significant driver of higher costs.
+* **Mental Health:** Daily anxiety was found to be a statistically significant driver of higher costs.
 
 
-* 
-**Lifestyle:** Healthy behaviors (exercise, quitting drinking/smoking) correlate with lower premiums.
+*  **Lifestyle:** Healthy behaviors (exercise, quitting drinking/smoking) correlate with lower premiums.
 
 
-* 
-**Socioeconomics:** Higher education levels were associated with higher premiums, likely due to the correlation with better/more comprehensive insurance plans.
+*  **Socioeconomics:** Higher education levels were associated with higher premiums, likely due to the correlation with better/more comprehensive insurance plans.
 
 
 <img width="883" height="546" alt="image" src="https://github.com/user-attachments/assets/4a3b5529-e16f-46b4-b94c-8ff829482a4e" />
@@ -50,24 +46,20 @@ Based on the comprehensive report and R code you provided, here is a structured 
 
 #### **3. Refinement**
 
-* 
-**Multicollinearity:** Checked Cramer’s V to remove highly correlated categorical predictors (e.g., removing `RACEALLP` in favor of `HISPALLP`).
+*  **Multicollinearity:** Checked Cramer’s V to remove highly correlated categorical predictors (e.g., removing `RACEALLP` in favor of `HISPALLP`).
 
 
-* 
-**Outlier Removal:** Used Cook’s Distance to identify and remove influential observations, reducing the dispersion parameter from 13.92 to 1.19.
+*  **Outlier Removal:** Used Cook’s Distance to identify and remove influential observations, reducing the dispersion parameter from 13.92 to 1.19.
   
 
 #### **4. Advanced Feature Selection (Custom Implementation)**
 
 Standard AIC/BIC selection methods (like `stepAIC`) are not valid for survey-weighted designs because they lack a standard likelihood estimator.
 
-* 
-**Solution:** We wrote custom R functions to perform **Forward, Backward, and Hybrid stepwise selection** using **Wald's Test** to evaluate variable significance.
+* **Solution:** We wrote custom R functions to perform **Forward, Backward, and Hybrid stepwise selection** using **Wald's Test** to evaluate variable significance.
 
 
-* 
-**Result:** The backward selection method yielded the optimal model with 13 significant predictors.
+* **Result:** The backward selection method yielded the optimal model with 13 significant predictors.
 
   
 
