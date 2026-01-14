@@ -36,12 +36,11 @@ Based on the comprehensive report and R code you provided, here is a structured 
 * **Initial Approach:** Attempted OLS Linear Regression. Diagnostics (Residuals vs. Fitted, Q-Q Plot) revealed strong heteroscedasticity and right-skewed residuals.
 
 
-* 
-**Solution:** Implemented a **Gamma GLM with a Log Link function**, which appropriately handles skewed, positive-only cost data.
+* **Solution:** Implemented a **Gamma GLM with a Log Link function**, which appropriately handles skewed, positive-only cost data.
 
 
-* 
-**Survey Design:** Utilized the `survey` package in R to incorporate stratification (`PSTRAT`), clustering (`PPSU`), and sampling weights (`WTFA_A`) to ensure population-level unbiased estimates.
+* **Survey Design:** Utilized the `survey` package in R to incorporate stratification (`PSTRAT`), clustering (`PPSU`), and sampling weights (`WTFA_A`) to ensure population-level unbiased estimates.
+
 
 
 #### **3. Refinement**
@@ -51,6 +50,7 @@ Based on the comprehensive report and R code you provided, here is a structured 
 
 *  **Outlier Removal:** Used Cook’s Distance to identify and remove influential observations, reducing the dispersion parameter from 13.92 to 1.19.
   
+
 
 #### **4. Advanced Feature Selection (Custom Implementation)**
 
